@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "TestSpringBoot"
+  description: "Testar SpringBoot i backstage"
+  annotations:
+    github.com/project-slug: JohWik/testspringboot
+    backstage.io/techdocs-ref: url:https://github.com/JohWik/testspringboot
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "JohWik"

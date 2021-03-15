@@ -1,0 +1,8 @@
+site_name: "TestSpringBoot"
+site_description: "Testar SpringBoot i backstage"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core

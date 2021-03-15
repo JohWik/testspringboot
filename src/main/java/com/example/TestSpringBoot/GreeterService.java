@@ -1,19 +1,15 @@
 package com.example.TestSpringBoot;
 
-import com.example.TestSpringBoot.proto.GreeterGrpc;
-import com.example.TestSpringBoot.proto.GreeterOuterClass;
-import io.grpc.stub.StreamObserver;
-import org.lognet.springboot.grpc.GRpcService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@GRpcService
-public class GreeterService extends GreeterGrpc.GreeterImplBase {
+@RestController
+@RequestMapping("/hello")
+public class GreeterService {
 
-  @Override
-  public void sayHello(final GreeterOuterClass.HelloRequest request,
-                       final StreamObserver<GreeterOuterClass.HelloReply> responseObserver) {
-    final GreeterOuterClass.HelloReply.Builder replyBuilder =
-        GreeterOuterClass.HelloReply.newBuilder().setMessage("Hello " + request.getName());
-    responseObserver.onNext(replyBuilder.build());
-    responseObserver.onCompleted();
+  @GetMapping
+  public String sayHello() {
+    return "hello";
   }
 }
